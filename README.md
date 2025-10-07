@@ -1,0 +1,2 @@
+# Rifky
+hanya ingin mempelajari
