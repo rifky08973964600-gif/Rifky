@@ -1,0 +1,123 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #c4daee); /* Background Gradasi Keren */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1000px;
+}
+
+h1 {
+    text-align: center;
+    color: #1a4a75;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #3b82f6;
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+#attendance-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+#attendance-table th, #attendance-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e7ff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#attendance-table th {
+    background-color: #3b82f6;
+    color: white;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+}
+
+#attendance-table tbody tr:hover {
+    background-color: #eef2ff;
+    transform: scale(1.01); /* Efek zoom halus saat di-hover */
+}
+
+/* Animasi Fade-In Keren untuk Baris */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.table-row-animate {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0; /* Mulai tersembunyi */
+}
+
+/* Styling untuk Status */
+.status-present {
+    color: white;
+    background-color: #10b981; /* Hijau Keren */
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.status-absent {
+    color: white;
+    background-color: #ef4444; /* Merah Keren */
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+/* Tombol Aksi */
+.action-button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.action-button:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Animasi Status Perubahan */
+@keyframes pulseStatus {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.status-present, .status-absent {
+    animation: pulseStatus 0.5s ease-in-out;
+}
